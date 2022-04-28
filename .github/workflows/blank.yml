@@ -15,4 +15,20 @@ jobs:
 
       steps:
         - name: Test1
-          run: echo ${{ env.TIMESTAMP}}
+          uses: Kaven-Universe/github-action-current-date-time@v1.1.0
+          with:
+            format: "YYYYMMDD.HHmmss"
+        # Use the output from the `t1` step
+        - name: Output1
+          run: |
+            echo "The time was ${{ steps.t1.outputs.time }}"
+            echo "The year was ${{ steps.t1.outputs.year }}"
+            echo "The month was ${{ steps.t1.outputs.month }}"
+            echo "The day was ${{ steps.t1.outputs.day }}"
+            echo "The hours was ${{ steps.t1.outputs.hours }}"
+            echo "The minutes was ${{ steps.t1.outputs.minutes }}"
+            echo "The seconds was ${{ steps.t1.outputs.seconds }}"
+            echo "The milliseconds was ${{ steps.t1.outputs.milliseconds }}"
+            echo "The day_of_week was ${{ steps.t1.outputs.day_of_week }}"
+            echo "The week_of_year was ${{ steps.t1.outputs.week_of_year }}"
+            echo "The milliseconds_since_epoch was ${{ steps.t1.outputs.milliseconds_since_epoch }}"
