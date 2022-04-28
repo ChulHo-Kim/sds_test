@@ -15,6 +15,7 @@ jobs:
 
       steps:
         - name: Test1
+          id: t1
           uses: Kaven-Universe/github-action-current-date-time@v1.1.0
           with:
             format: "YYYYMMDD.HHmmss"
