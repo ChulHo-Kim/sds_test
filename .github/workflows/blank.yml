@@ -7,7 +7,7 @@ on:
       - main
       
 env:
-  TIMESTAMP: ${{  }}
+  TIMESTAMP: 0
       
 jobs:    
  build:
